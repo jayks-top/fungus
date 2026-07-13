@@ -32,10 +32,10 @@
 
 html { scroll-behavior: smooth; }
 
-/* @media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
-} */
+}
 
 body {
   background: var(--bg);
@@ -71,16 +71,16 @@ a:focus-visible, button:focus-visible {
   height: 100%;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 #mycelium-bg path {
   fill: none;
   stroke: var(--line-strong);
-  stroke-width: 1;
+  stroke-width: 0.8;
 }
 #mycelium-bg circle {
   fill: var(--amber);
-  opacity: 0.5;
+  opacity: 0.35;
 }
 
 main, header, footer, nav { position: relative; z-index: 1; }
@@ -206,12 +206,12 @@ main, header, footer, nav { position: relative; z-index: 1; }
   padding-bottom: 3px;
   transition: gap 0.25s ease, color 0.25s ease;
 }
-.hero-cta svg { animation: bob 2.2s ease-in-out infinite; }
-.hero-cta:hover { gap: 0.9rem; color: var(--teal); }
+.hero-cta svg { animation: bob 3.4s ease-in-out infinite; }
+.hero-cta:hover { gap: 0.75rem; color: var(--teal); }
 
 @keyframes bob {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(4px); }
+  50% { transform: translateY(2px); }
 }
 
 .hero-fade {
@@ -220,6 +220,31 @@ main, header, footer, nav { position: relative; z-index: 1; }
   height: 30vh;
   background: linear-gradient(to bottom, transparent, var(--bg));
   pointer-events: none;
+}
+
+/* ==========================================================================
+   Imagem de capa (hero)
+   ========================================================================== */
+.cover-image {
+  margin: 0 0 -1px;
+  padding: 0 var(--container-pad);
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cover-image img {
+  width: 100%;
+  height: clamp(220px, 34vw, 420px);
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  display: block;
+}
+.cover-image figcaption {
+  margin-top: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-faint);
 }
 
 /* ==========================================================================
@@ -255,8 +280,8 @@ main, header, footer, nav { position: relative; z-index: 1; }
 /* reveal-on-scroll */
 .reveal {
   opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translateY(10px);
+  transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1), transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .reveal.is-visible {
   opacity: 1;
@@ -272,11 +297,11 @@ main, header, footer, nav { position: relative; z-index: 1; }
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 1.9rem 1.7rem;
-  transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+  transition: border-color 0.4s ease, transform 0.4s ease, background 0.4s ease;
 }
 .trait-card:hover {
   border-color: var(--line-strong);
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   background: var(--surface-2);
 }
 .trait-icon {
@@ -308,6 +333,14 @@ main, header, footer, nav { position: relative; z-index: 1; }
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
+}
+.specimen-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  display: block;
 }
 .specimen-card header { display: flex; flex-direction: column; gap: 0.25rem; }
 .specimen-tag {
@@ -375,6 +408,15 @@ main, header, footer, nav { position: relative; z-index: 1; }
   border-radius: var(--radius);
   padding: 1.5rem 1.3rem;
 }
+.mode-img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  display: block;
+  margin-bottom: 0.9rem;
+}
 .mode-index {
   display: inline-block;
   font-family: var(--font-mono);
@@ -411,6 +453,15 @@ main, header, footer, nav { position: relative; z-index: 1; }
 .repro-panel-accent {
   border-color: rgba(94, 234, 212, 0.3);
   background: var(--teal-soft);
+}
+.repro-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  display: block;
+  margin-bottom: 1.4rem;
 }
 .repro-panel h3 {
   font-size: 1.35rem;
@@ -449,6 +500,25 @@ main, header, footer, nav { position: relative; z-index: 1; }
   font-size: 0.95rem;
   text-align: center;
 }
+
+/* ==========================================================================
+   Referências
+   ========================================================================== */
+.refs-section h2 {
+  font-size: clamp(1.6rem, 2.8vw, 2.1rem);
+  font-weight: 600;
+  margin-bottom: 1.75rem;
+}
+.refs-list p {
+  color: var(--text-dim);
+  font-size: 0.92rem;
+  margin: 0 0 0.9rem;
+  padding-left: 1.1rem;
+  border-left: 2px solid var(--line-strong);
+  max-width: 62ch;
+}
+.refs-list p i { color: var(--text-dim); font-style: italic; }
+.refs-list p:last-child { margin-bottom: 0; }
 
 /* ==========================================================================
    Footer
