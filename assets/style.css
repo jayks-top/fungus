@@ -581,3 +581,14 @@ main, header, footer, nav { position: relative; z-index: 1; }
   .hero-lead { font-size: 0.98rem; }
   .specimen-card, .trait-card, .repro-panel { padding: 1.4rem; }
 }
+
+body{
+  display: flex;
+  flex-direction: column;
+}
+
+.quiz {
+  background: var(--amber);
+  color: var(--bg) !important;
+  border-radius: var(--radius);
+}
