@@ -57,9 +57,6 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   border-radius: 4px;
 }
 
-/* ==========================================================================
-   Header / hero pequeno
-   ========================================================================== */
 .quiz-header {
   padding: 4.5rem 0 2.5rem;
   border-bottom: 1px solid var(--line);
@@ -88,9 +85,6 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   font-size: 1.05rem;
 }
 
-/* ==========================================================================
-   Progresso
-   ========================================================================== */
 .quiz-progress-wrap {
   position: sticky;
   top: 0;
@@ -123,9 +117,6 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* ==========================================================================
-   Cartão de questão
-   ========================================================================== */
 .question-card {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -207,7 +198,6 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 .option.selected .option-text { color: var(--text); }
 .option.selected .option-letter { color: var(--amber); }
 
-/* estados de correção */
 .option.correct {
   border-color: var(--success);
   background: var(--success-soft);
@@ -237,9 +227,6 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 .explanation.visible { display: block; }
 .explanation strong { color: var(--teal); display: block; margin-bottom: 0.2rem; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; }
 
-/* ==========================================================================
-   Ações / botões
-   ========================================================================== */
 .quiz-actions {
   display: flex;
   justify-content: center;
@@ -273,9 +260,6 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 .btn-quiz-ghost:hover { border-color: var(--teal); color: var(--teal) !important; }
 
-/* ==========================================================================
-   Resultado
-   ========================================================================== */
 .result-panel {
   display: none;
   background: var(--surface);
@@ -313,9 +297,6 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   margin-top: 1.25rem;
 }
 
-/* ==========================================================================
-   Questão discursiva (bônus)
-   ========================================================================== */
 .discursive-wrap { margin-bottom: 3rem; }
 .discursive-card { border-color: rgba(94, 234, 212, 0.3); }
 .discursive-sub {
@@ -327,9 +308,6 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   border-left: 2px solid var(--line-strong);
 }
 
-/* ==========================================================================
-   Footer
-   ========================================================================== */
 .site-footer {
   border-top: 1px solid var(--line);
   padding: 2rem 0;

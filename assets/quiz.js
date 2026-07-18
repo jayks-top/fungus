@@ -124,7 +124,6 @@ const QUESTIONS = [
   }
 ];
 
-// Questão discursiva (não entra na pontuação) — UFSCar 2008
 const DISCURSIVE = {
   tag: "UFSCar 2008 — Discursiva",
   text: "Daqui a dois meses, amostras de liquens viajarão ao espaço para participar de uma experiência com a qual a Agência Espacial Europeia pretende verificar se organismos vivos podem viajar de um planeta a outro \u201ca bordo\u201d de meteoritos. Os liquens, selecionados por terem grande resistência, ficarão dentro de um dispositivo que simulará as condições de um meteorito em movimento. <em>(O Estado de S. Paulo, julho 2007)</em>",

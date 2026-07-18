@@ -1,8 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ---------------------------------------------------------------------
-     1. Navbar: solid background after scrolling past hero
-  --------------------------------------------------------------------- */
   const nav = document.getElementById('mainNav');
   const onScroll = () => {
     if (window.scrollY > 40) nav.classList.add('scrolled');
@@ -11,9 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  /* ---------------------------------------------------------------------
-     2. Active nav link tracking via IntersectionObserver
-  --------------------------------------------------------------------- */
   const sections = document.querySelectorAll('main section[id]');
   const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
 
@@ -30,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   sections.forEach((section) => navObserver.observe(section));
 
-  /* Close mobile menu after a link is tapped */
   const collapseEl = document.getElementById('navMenu');
   if (collapseEl && window.bootstrap) {
     const bsCollapse = new bootstrap.Collapse(collapseEl, { toggle: false });
@@ -41,9 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------------------------------------------------------------------
-     3. Reveal-on-scroll for elements marked .reveal
-  --------------------------------------------------------------------- */
   const revealTargets = document.querySelectorAll('.reveal');
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
@@ -56,11 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   revealTargets.forEach((el) => revealObserver.observe(el));
 
-  /* ---------------------------------------------------------------------
-     4. Decorative mycelium network background (signature element)
-     Generates a soft branching network of lines + spore-dots that spans
-     the full page height, evoking hyphae threading beneath the surface.
-  --------------------------------------------------------------------- */
   const svg = document.getElementById('mycelium-bg');
   if (svg) {
     const draw = () => {
@@ -79,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
 
-      // connect each node to its 2 nearest neighbours with a gently curved path
       const ns = document.createElementNS('http://www.w3.org/2000/svg', 'g');
       nodes.forEach((node, i) => {
         const distances = nodes
@@ -99,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       svg.appendChild(ns);
 
-      // spore dots at each node
       nodes.forEach((node) => {
         const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
         c.setAttribute('cx', node.x);
